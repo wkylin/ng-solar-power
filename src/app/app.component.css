@@ -1,0 +1,223 @@
+.bg-purple {
+  /*background-color: purple;*/
+}
+
+.ux-header {
+  padding: 10px;
+}
+
+.ux-header-content {
+  padding-top: 5px;
+  background-color: #000141;
+  border-radius: 10px;
+}
+
+.ux-body {
+  padding: 15px;
+}
+
+.ux-side-bar {
+  /*height: 200px;*/
+  border-radius: 10px;
+  padding: 15px;
+  background: linear-gradient(#000549, #00011a);
+  margin-bottom: 10px;
+}
+
+.ux-side-bar h2 {
+  color: #2d66dc;
+  font-size: 21px;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+.ux-charts-box {
+  position: relative;
+}
+
+.ux-charts-theme {
+  padding-top: 30px;
+}
+
+.ux-charts-text {
+  margin: 10px 0 10px 0;
+  font-size: 18px;
+}
+
+.ux-charts-text span {
+  color: #2d66dc;
+}
+
+.ux-charts-text em {
+  font-style: normal;
+  color: #14bdf2;
+}
+
+.ux-charts-text em.first {
+  color: #7d3b45;
+}
+
+.el-col-fix {
+  position: relative;
+}
+
+.ux-charts-title {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 180px;
+  height: 140px;
+  color:#fff;
+  text-align:center;
+}
+
+.ux-side-bar .border-bottom {
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #2d66dc;
+}
+
+.ux-list-text li {
+  color: #2d66dc;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dotted #2d66dc;
+  font-size: 21px;
+}
+
+.ux-list-text li span {
+  float: left;
+}
+
+.ux-list-text li em {
+  float: right;
+  font-style: normal;
+  font-size: 23px;
+  color: #14bdf2;
+}
+
+.clear-fix {
+  overflow: hidden;
+  _zoom: 1;
+}
+
+.ux-list-picture {
+  padding-top: 30px;
+}
+
+.ux-list-picture li {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+
+}
+
+.ux-list-picture li img {
+  vertical-align: baseline;
+  margin-right: 15px;
+}
+
+.ux-list-picture li span {
+  font-size: 26px;
+
+}
+
+.ux-list-picture li span.pic-sub {
+  color: #2d66dc;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.ux-main {
+  padding: 0 20px;
+
+}
+
+.ux-main-box {
+  background: linear-gradient(#000048, #000039);
+  padding: 10px 0 20px 0;
+}
+
+.ux-main-box .line-pic img {
+  height: 3px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.ux-main-box h3 {
+  font-size: 20px;
+  color: #2d66dc;
+  margin: 20px 0;
+  padding-left: 10px;
+}
+
+.ux-main h4 {
+  font-size: 24px;
+  color: #2d66dc;
+  margin: 15px 0;
+  padding: 0 20px;
+}
+
+.ux-main-box .line-text {
+  font-size: 20px;
+  color: #14bdf2;
+  padding-left: 10px;
+}
+
+.ux-main-box .line-text span {
+  font-size: 26px;
+  padding-right: 10px;
+}
+
+.ux-echart-box {
+  margin-bottom: 20px;
+}
+
+.ux-carousel {
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.ux-top-left,
+.ux-bottom-left,
+.ux-top-right,
+.ux-bottom-right {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.ux-top-left {
+  background: url('../assets/images/top-left.png') 0 0 no-repeat transparent;
+  top: 0;
+  left: 0;
+}
+
+.ux-bottom-left {
+  background: url('../assets/images/bottom-left.png') 0 0 no-repeat transparent;
+  bottom: 0;
+  left: 0;
+}
+
+.ux-top-right {
+  background: url('../assets/images/top-right.png') 0 0 no-repeat transparent;
+  top: 0;
+  right: 0;
+}
+
+.ux-bottom-right {
+  background: url('../assets/images/bottom-right.png') 0 0 no-repeat transparent;
+  bottom: 0;
+  right: 0;
+}
+
+.ux-carousel .ux-carousel-box {
+  padding: 30px 0;
+  background: linear-gradient(#000134, #000007);
+  color: #fff;
+}
+
+
+

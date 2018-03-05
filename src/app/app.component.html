@@ -1,20 +1,184 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div el-row class="ux-header">
+  <div el-col [span]="24">
+    <div class="grid-content ux-header-content">
+      <img src="../assets/images/logo.png" alt="">
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<div el-row class="ux-body">
+  <div el-col [span]="5">
+    <div class="grid-content">
+      <div class="ux-side-bar">
+        <h2>电站概况</h2>
+        <div class="ux-charts-box">
+          <div el-row>
+            <div el-col [span]="12" class="el-col-fix">
+              <div class="ux-charts-title">
+                <p>2<br/>GW</p>
+                <p>电站总容量</p>
+              </div>
+              <echarts [initOpts]="initOpts" [options]="optionPie"></echarts>
+            </div>
+            <div el-col [span]="12" class="ux-charts-theme">
+              <div class="ux-charts-text"><span>光伏：</span><em class="first">1.70GW</em></div>
+              <div class="ux-charts-text"><span>风电：</span><em>294.25MW</em></div>
+            </div>
+          </div>
+          <div el-row>
+            <div el-col [span]="12" class="el-col-fix">
+              <div class="ux-charts-title">
+                <p>82</p>
+                <p>电站总数</p>
+              </div>
+              <echarts [initOpts]="initOpts" [options]="optionPie"></echarts>
+            </div>
+            <div el-col [span]="12" class="ux-charts-theme">
+              <div class="ux-charts-text"><span>光伏：</span><em class="first">77</em></div>
+              <div class="ux-charts-text"><span>风电：</span><em>5</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ux-side-bar">
+        <h2>发电量(当月)</h2>
+        <div class="ux-charts-box">
+          <echarts [initOpts]="initOptsBar" [options]="options"></echarts>
+        </div>
+      </div>
+
+      <div class="ux-side-bar">
+        <h2>发电量(当年)</h2>
+        <div class="ux-charts-box">
+          <echarts [initOpts]="initOptsBar" [options]="options"></echarts>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div el-col [span]="14">
+    <div class="grid-content ux-main">
+      <div el-row :gutter="20" class="ux-main-box">
+        <div el-col [span]="8">
+          <h3>当前发电功率</h3>
+          <div class="line-pic">
+            <img src="../assets/images/line.png" alt="">
+          </div>
+          <div class="line-text"><span>81.23</span>MW</div>
+        </div>
+
+        <div el-col [span]="8">
+          <h3>累计发电量</h3>
+          <div class="line-pic">
+            <img src="../assets/images/line.png" alt="">
+          </div>
+          <div class="line-text"><span>574,759.24</span>MWh</div>
+        </div>
+
+        <div el-col [span]="8">
+          <h3>累计折算电费收入</h3>
+          <div class="line-pic">
+            <img src="../assets/images/line.png" alt="">
+          </div>
+          <div class="line-text"><span>￥464,805,670.4</span></div>
+        </div>
+      </div>
+      <!--电站分布-->
+      <div el-row :gutter="20" class="ux-echart-box">
+        <h4>电站分布</h4>
+        <div class="ux-echart">
+          <echarts [initOpts]="initOptsChina" [options]="optionChina"></echarts>
+        </div>
+      </div>
+
+      <div el-row :gutter="20">
+        <div class="ux-carousel">
+          <div class="ux-carousel-box">
+            <el-carousel height="230px" arrow="always" indicator-position="none">
+              <!--<el-carousel-item>-->
+              <el-carousel-item *ngFor="let item of ['1', '2', '3']">
+                <div el-row :gutter="20">
+                  <div el-col [span]="16">
+                    <div class="title">浙江桐乡天昱8.53MW分布式光伏</div>
+                    <div class="location">浙江嘉兴</div>
+                    <div class="update-date">更新时间：2018-02-25</div>
+                    <div el-row :gutter="20">
+                      <div el-col [span]="8">
+                        <img src="../assets/images/themes.png" alt="">
+                      </div>
+                      <div el-col [span]="8">
+                        <dl class="dl-text">
+                          <dt>9.63<span>MWh</span></dt>
+                          <dd>当日发电量</dd>
+                        </dl>
+                        <dl class="dl-text">
+                          <dt>4.92<span>GWh</span></dt>
+                          <dd>累计发电量</dd>
+                        </dl>
+                      </div>
+                      <div el-col [span]="8">
+                        <dl class="dl-text">
+                          <dt>￥9,440.34</dt>
+                          <dd>当日折算电费收入</dd>
+                        </dl>
+                        <dl class="dl-text">
+                          <dt>￥9,440.34</dt>
+                          <dd>累计折算电费收入</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div el-col [span]="8">
+                    <div style="">
+                      <echarts [initOpts]="initOpts2" [options]="optionPie"></echarts>
+                    </div>
+                  </div>
+                </div>
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+          <div class="ux-top-left"></div>
+          <div class="ux-bottom-left"></div>
+          <div class="ux-top-right"></div>
+          <div class="ux-bottom-right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div el-col [span]="5">
+    <div class="grid-content">
+
+      <div class="ux-side-bar ">
+        <h2 class="border-bottom">上月日均满发小时数↑↓</h2>
+        <ul class="ux-list-text">
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+          <li><span>朝阳东大屯10MW光伏</span><em>7.73h</em></li>
+        </ul>
+      </div>
+
+      <div class="ux-side-bar">
+        <h2>社会贡献</h2>
+        <ul class="ux-list-picture">
+          <li>
+            <img src="../assets/images/phyte.png" alt=""><span class="pic-sub">绿植增加量</span><span>1,569,959</span>棵
+          </li>
+          <li>
+            <img src="../assets/images/cloud.png" alt=""><span class="pic-sub">CO2减排量</span><span>57.3</span>万吨
+          </li>
+          <li>
+            <img src="../assets/images/lamps.png" alt=""><span class="pic-sub">灯泡使用量</span><span>444.92</span>亿小时
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 

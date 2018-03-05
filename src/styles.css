@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~normalize.css";
+@import "~element-angular/theme/index.css";
+
+body {
+  background-color: #00001e;
+  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  overflow: auto;
+  width: 1920px;
+  height: 1300px;
+}
+
+ul, ol, dl, dt, dd{
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+{}
+
+[class^=el-icon-] {
+  font-size: 40px;
+  color: #14bdf2;
+}
+
+.el-carousel__item {
+  padding: 0 50px;
+}
+
+.el-carousel__item .title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.el-carousel__item .location {
+  padding-left: 30px;
+  background: url('assets/images/localtion.png') 0 0 no-repeat transparent;
+  height: 26px;
+  line-height: 26px;
+  font-size: 18px;
+  margin-bottom:10px;
+}
+
+.el-carousel__item .update-date {
+  font-size: 18px;
+  margin-bottom:10px;
+}
+
+.el-carousel__arrow {
+  background-color: rgba(31, 45, 61, 0);
+}
+
+.el-carousel__arrow--left {
+  left: 2px;
+}
+
+.el-carousel__arrow--right {
+  right: 2px;
+}
+
+.el-carousel__item .dl-text{
+  padding-top:10px;
+  margin-bottom: 10px;
+}
+.el-carousel__item .dl-text dt{
+  color:#fff;
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.el-carousel__item .dl-text dt span{
+  font-size:18px;
+}
+.el-carousel__item .dl-text dd{
+  font-size:16px;
+  color:#285dca
+}
