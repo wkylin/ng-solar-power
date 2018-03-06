@@ -9,14 +9,14 @@ export class MyHttpService {
 
   // headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
   // headers = new HttpHeaders({'Content-Type': 'application/json'});
-  getParams = new HttpParams().set('plant_id', '2');
+  getParams = new HttpParams().set('page', '1').set('perpage', '10');
 
   constructor(private http: HttpClient) {
   }
 
   // http request
   queryLists() {
-    return this.http.request('get', this.apiBase + '/v1/plant/data', {
+    return this.http.request('get', this.apiBase + '/v1/plant/list', {
       params: this.getParams
     });
   }
