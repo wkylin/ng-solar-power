@@ -1,0 +1,11 @@
+{
+  "/v1": {
+    "target": "http://server-cn.growatt.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/v1": "/v1"
+    },
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

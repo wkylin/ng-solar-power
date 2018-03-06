@@ -1,11 +1,16 @@
-import {Component} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MyHttpService } from './service/http.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+
+  // list
+  lists = [];
+
   initOpts = {
     renderer: 'svg',
     width: 180,
@@ -577,5 +582,27 @@ export class AppComponent {
       }
     }
     return res;
+  }
+
+  constructor(private myHttp: MyHttpService) {
+
+  }
+
+  ngOnInit() {
+    this.queryPosts();
+  }
+
+  ngOnDestroy() {
+  }
+
+  queryPosts() {
+    this.myHttp.queryLists().subscribe(
+      data => {
+          this.lists = data['lists'];
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }
